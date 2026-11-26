@@ -1,0 +1,223 @@
+{
+  "version": "37.0",
+  "android_version": "17",
+  "extension_level": "22",
+  "manifest": {
+    "repository": "https://android.googlesource.com/platform/manifest",
+    "tag": "android-17.0.0_r1",
+    "commit": "5bc9a7ce1cd78dd53613bbfd0ebf506e1e4adb0f",
+    "release_config": "cp2a"
+  },
+  "snapshots": {
+    "api/37.0/api-versions-provenance.json": "1dfc73de4813cbd4d5df316c8d6aa38e16b404ce1d030677e38b3fa14f2b282f",
+    "api/37.0/api-versions.xml": "233d5e8ed503d95576f750c0bcad413b9d11825bb3b7d5bca8caafcd54ec3abe",
+    "api/37.0/core-classes.txt": "da3bba76685248ea56224332179e15c321687e41776d05605c4c62a46b10b325",
+    "api/37.0/metadata/activity_actions.txt": "1b57f88de71a9c1889cf321344e8bd720bd2a87aa7da50d24f1f87fc0ac91e50",
+    "api/37.0/metadata/annotations.zip": "1b5372d4373ab4f1626ecdafacb5d8fe14686a23e34a4335496333162d3e127b",
+    "api/37.0/metadata/broadcast_actions.txt": "53e7d248d974ec3cba233d2f203e96efc7313a72a26d189e0d5d5a4cbda1839f",
+    "api/37.0/metadata/build.prop": "6eb99f14e257223389705f8357776456f56da2a8de3be6c9e39f575314d86017",
+    "api/37.0/metadata/categories.txt": "9521f6df02a2b9877896f184b26049a3b7a0ca91827514ecdf5803ca14d4bcce",
+    "api/37.0/metadata/features.txt": "57018ff25bfa41fb6689592733c4fb099ee94c7885736d2dbdb20dae1fb603cd",
+    "api/37.0/metadata/framework.aidl": "216a0eeffbfd59bd293abb476b85f28a19dbb74b3a87fbf6706f1e36ad814410",
+    "api/37.0/metadata/service_actions.txt": "061670a1543cb9ee1fe07f0cf03add2a119fbfbab098931a90742ac2fb0ad4ec",
+    "api/37.0/metadata/widgets.txt": "635b07d0d1897ba2ce31a51e3932f3962639e93ee5acd2f08ad040a5a1e1f9d5",
+    "api/37.0/public-provenance.json": "f3ed90e286d8fbf347eb46f1dc1205a825a6d5db840ae5b24810c6d1ba400c95",
+    "api/37.0/public.txt": "120e49c34fb809f007d433d20c13de9a374c969d5a87792f2336931956581933",
+    "api/37.0/system-provenance.json": "c5d102929a13c7ece881c1b7540c7cc842187d12d45b00ddfdb9547dbbac4e3e",
+    "api/37.0/system.txt": "a1ffa7cefa1f627d88393ca386735b8d2913c9ad95921b42c9aa0c22e2f8c098",
+    "configs/framework-feature-flags-provenance.json": "1f8f3931d67a100b39734276286caeda943c4c412e07de8eaf2ed7e22375f0bc",
+    "configs/framework-feature-flags.txt": "82c311c807f02ee38dac27a4be1f8cd26ba2a22b4f69b2032782b4149cad8d6c",
+    "configs/lambda-sources.txt": "4a91d83eef6bd949e821d405fdd6fce9fce535a2ec3886882b2b8926da06f08f",
+    "patches/aosp-17-platform-without-wear.patch": "1b1c5a1bcadeeaa98afe27f032147b3c4bcee8ae3358b24e18d19171034a73ad"
+  },
+  "files": {
+    "android-test-base-api.tar.gz": {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+archive/94b4c163b7dfe5ce3607f7bb8456f9573f7de57d/test-base/api.tar.gz",
+      "sha256": "b6acaf6c303bc204a49e46b432dd3fcfe00b63e951337f91e3bfcac9aceb06fe",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "android-test-mock-api.tar.gz": {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+archive/94b4c163b7dfe5ce3607f7bb8456f9573f7de57d/test-mock/api.tar.gz",
+      "sha256": "60e14f562ee39be514a99072210b6c7ac3257404b1c735398ad116c2b728925b",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "android-test-runner-api.tar.gz": {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+archive/94b4c163b7dfe5ce3607f7bb8456f9573f7de57d/test-runner/api.tar.gz",
+      "sha256": "bffe70fd6c8e8fec66b63ef9a40c226704aa19413810afb44d97a8c09dc47470",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "apache-http-NOTICE": {
+      "url": "https://android.googlesource.com/platform/external/apache-http/+/bc93e03486b05decf4ebd030563a9d0b23999a0d/NOTICE?format=TEXT",
+      "sha256": "35de8127791c66480f3bfac591dd3ade6845a09ed5b48f8c7233f68714a80110",
+      "license": "Apache-2.0",
+      "format": "gitiles-text",
+      "role": "metadata"
+    },
+    "apache-http-api.tar.gz": {
+      "url": "https://android.googlesource.com/platform/external/apache-http/+archive/bc93e03486b05decf4ebd030563a9d0b23999a0d/api.tar.gz",
+      "sha256": "762c3ded0c9a43cf96d1c986aeb0b540a894112804df249849fdb1656744cd0b",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "binder-headers.tar.gz": {
+      "url": "https://android.googlesource.com/platform/frameworks/native/+archive/ae266dcb706d083868578cfedce381ef44488a07/libs/binder/ndk/include_cpp.tar.gz",
+      "sha256": "ba3ea7d36fdc3fdae88dd4dcd4e41b6de58b62378f33e3fe05a226e7b545d104",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "car-api.tar.gz": {
+      "url": "https://android.googlesource.com/platform/packages/services/Car/+archive/9f04df65daa8b9a65ee05fd4039fe95446874d76/car-lib/api.tar.gz",
+      "sha256": "6c20bb655feb2fa2b793104bf62d4594ea836b58046454be3a5ea32b3cd28ac5",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "development-build.tar.gz": {
+      "url": "https://android.googlesource.com/platform/development/+archive/4dafd114fab3c3d9543a5aff0ad097f479915176/build.tar.gz",
+      "sha256": "d5da19709c7e7af7763b9fe14cfc13eef1b427380a61689f6a4bf38579f258fb",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "development-sdk.tar.gz": {
+      "url": "https://android.googlesource.com/platform/development/+archive/4dafd114fab3c3d9543a5aff0ad097f479915176/sdk.tar.gz",
+      "sha256": "5895ed48e4e8fa7b3468989a922123599d0e3aba2c0281005b31ed3c4b73e4d1",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "development-skins.tar.gz": {
+      "url": "https://android.googlesource.com/platform/development/+archive/4dafd114fab3c3d9543a5aff0ad097f479915176/tools/emulator/skins.tar.gz",
+      "sha256": "e430b5c634c6a579d278735de036b21fecf268548f44c2409314593413893c5a",
+      "license": "Apache-2.0 and upstream development tools asset notice",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "development-templates.tar.gz": {
+      "url": "https://android.googlesource.com/platform/development/+archive/4dafd114fab3c3d9543a5aff0ad097f479915176/tools/templates.tar.gz",
+      "sha256": "d4e37c8dde9de511dc85e6f2f87ce71a6a8825e73911265cf790a091bf652695",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "framework-res.tar.gz": {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+archive/94b4c163b7dfe5ce3607f7bb8456f9573f7de57d/core/res.tar.gz",
+      "sha256": "2646a1fd69f48029deb69f41d00578936b78052e8b16ddbbdfc0786ad6217e23",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "jarjar-NOTICE": {
+      "url": "https://android.googlesource.com/platform/external/jarjar/+/384ed55d6afe79ec6a143118c2cdd422e68c8e42/NOTICE?format=TEXT",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "license": "Apache-2.0",
+      "format": "gitiles-text",
+      "role": "metadata"
+    },
+    "jarjar-android.tar.gz": {
+      "url": "https://android.googlesource.com/platform/external/jarjar/+archive/384ed55d6afe79ec6a143118c2cdd422e68c8e42/src/android.tar.gz",
+      "sha256": "36eb4a1e81b1a1a4fcc566ba703f22595295795bf9adc6a47833db5a8bbc0c6d",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "jarjar-java.tar.gz": {
+      "url": "https://android.googlesource.com/platform/external/jarjar/+archive/384ed55d6afe79ec6a143118c2cdd422e68c8e42/src/main.tar.gz",
+      "sha256": "967eeb2ee292277873d10719d2d2606a4f0380670325e5ab7a82a339cdb3b26d",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "jarjar-resources.tar.gz": {
+      "url": "https://android.googlesource.com/platform/external/jarjar/+archive/384ed55d6afe79ec6a143118c2cdd422e68c8e42/res.tar.gz",
+      "sha256": "801e8209c7c615ddf0d3562a1217ed1c3a765f5a9e1904519c0f47bfe2d59a92",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "libcore-lambda-rules.txt": {
+      "url": "https://android.googlesource.com/platform/libcore/+/4ebfb391ee0109d16abe6e2bc965724b940928c5/core-lambda-jarjar-rules.txt?format=TEXT",
+      "sha256": "3ce511ff500d866d900e2dea74f436ef769b79b1f30f40772a4d36c86ceac053",
+      "license": "Apache-2.0",
+      "format": "gitiles-text",
+      "role": "metadata"
+    },
+    "libcore-lambda.tar.gz": {
+      "url": "https://android.googlesource.com/platform/libcore/+archive/4ebfb391ee0109d16abe6e2bc965724b940928c5/ojluni/src/lambda.tar.gz",
+      "sha256": "8e17470c7f62cb3fe3d7f14b6687e7ac02a98d093d946367c1e948306ca37fc9",
+      "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "metalava-annotations.tar.gz": {
+      "url": "https://android.googlesource.com/platform/tools/metalava/+archive/e33bb96bcd3279859f4d824ba3d17a36b56c2f68/stub-annotations/src/main/java.tar.gz",
+      "sha256": "9fff71f8e22b697d7340cd6715b063512b1ba55f15de4ad98831789480c71b2d",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "uiautomator-api.tar.gz": {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+archive/94b4c163b7dfe5ce3607f7bb8456f9573f7de57d/cmds/uiautomator/api.tar.gz",
+      "sha256": "ef8c2558e9f54c4731a7d5c9aaa11a9eef4f2820a19eaa22afe427a8c49360e8",
+      "license": "Apache-2.0",
+      "format": "gitiles-tree",
+      "role": "source"
+    },
+    "aosstudio-aosp-host-tools-bootstrap-17.0.0_r1-linux-x86_64.tar.gz": {
+      "license": "Upstream open-source licenses and notices in the AOSStudio release",
+      "sha256": "8abfdce2075b055707f14a1e41d70af10d14d4656936f1416ef70f8f4f3b3579",
+      "url": "https://github.com/aosstudio/aosp-host-tools/releases/download/latest/aosstudio-aosp-host-tools-bootstrap-17.0.0_r1-linux-x86_64.tar.gz",
+      "role": "tool"
+    },
+    "aosstudio-aosp-host-tools-generators-17.0.0_r1-linux-x86_64.tar.gz": {
+      "license": "Upstream open-source licenses and notices in the AOSStudio release",
+      "sha256": "61c40f5aedee8e3f6abb222ce89230624aca2dc25d15d0fb04d568c168c2a309",
+      "url": "https://github.com/aosstudio/aosp-host-tools/releases/download/latest/aosstudio-aosp-host-tools-generators-17.0.0_r1-linux-x86_64.tar.gz",
+      "role": "tool"
+    },
+    "aosstudio-aosp-host-tools-java-17.0.0_r1-linux-x86_64.tar.gz": {
+      "license": "Upstream open-source licenses and notices in the AOSStudio release",
+      "sha256": "9e446919fc1efdf347cf8052308cb11fea0781d8bcf5c7c94fbe84aa6ce2adf4",
+      "url": "https://github.com/aosstudio/aosp-host-tools/releases/download/latest/aosstudio-aosp-host-tools-java-17.0.0_r1-linux-x86_64.tar.gz",
+      "role": "tool"
+    },
+    "aosstudio-jdk-21.0.13.1-2-linux-x86_64.tar.gz": {
+      "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+      "sha256": "38ea3237e496258a103aa482a7733a08bef94572473625d47a2f5a9854948840",
+      "url": "https://github.com/aosstudio/jdk/releases/download/latest/aosstudio-jdk-21.0.13.1-2-linux-x86_64.tar.gz",
+      "role": "tool"
+    },
+    "asm-9.9.jar": {
+      "url": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.9/asm-9.9.jar",
+      "sha256": "03d99a74ad1ee5c71334ef67437f4ef4fe3488caa7c96d8645abc73c8e2017d4",
+      "license": "BSD-3-Clause",
+      "role": "java-dependency"
+    },
+    "asm-commons-9.9.jar": {
+      "url": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.9/asm-commons-9.9.jar",
+      "sha256": "db2f6f26150bbe7c126606b4a1151836bcc22a1e05a423b3585698bece995ff8",
+      "license": "BSD-3-Clause",
+      "role": "java-dependency"
+    },
+    "asm-tree-9.9.jar": {
+      "url": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.9/asm-tree-9.9.jar",
+      "sha256": "42178f3775c9c63f9e5e1446747d29b4eca4d91bd6e75e5c43cfa372a47d38c6",
+      "license": "BSD-3-Clause",
+      "role": "java-dependency"
+    },
+    "aosstudio-build-tools-36.0.0-linux-x86_64.zip": {
+      "url": "https://github.com/aosstudio/build-tools/releases/download/latest/aosstudio-build-tools-36.0.0-linux-x86_64.zip",
+      "sha256": "f4238d09a4680d1f292599f0fd85855614703b1666e438694a2d8ea7366e64e5",
+      "license": "Apache-2.0 and bundled upstream notices",
+      "role": "verification"
+    }
+  }
+}

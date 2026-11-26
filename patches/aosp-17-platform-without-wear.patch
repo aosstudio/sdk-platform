@@ -1,0 +1,51 @@
+Build the public AOSP platform without the vendor Wear SDK.
+
+The pinned public manifest does not provide wear-sdk-public-jar. Keep
+the package and its optional-library index in sync.
+
+Source: https://android.googlesource.com/platform/development/+/4dafd114fab3c3d9543a5aff0ad097f479915176/build/Android.bp
+
+diff --git a/build/Android.bp b/build/Android.bp
+--- a/build/Android.bp
++++ b/build/Android.bp
+@@ -349,17 +349,6 @@
+         "$(location soong_zip) -o $(out) -C $(genDir)/out -D $(genDir)/out",
+ }
+ 
+-genrule {
+-    name: "wear_sdk_zip",
+-    tools: ["soong_zip"],
+-    srcs: [":wear-sdk-public-jar"],
+-    out: ["wear_sdk_jar.zip"],
+-    cmd: "mkdir -p $(genDir)/out/optional/ && " +
+-        "cp $(in) $(genDir)/out/optional/wear-sdk.jar && " +
+-        "$(location soong_zip) -o $(out) -C $(genDir)/out -D $(genDir)/out",
+-
+-}
+-
+ android_sdk_repo_host {
+     name: "platforms",
+     base_dir: select(soong_config_variable("sdk", "sdk_platform_dir_name"), {
+@@ -378,7 +367,6 @@
+         ":sdk_platforms_templates",
+         ":sdk_platforms_notice",
+         ":sdk_platforms_data_res",
+-        ":wear_sdk_zip",
+     ],
+     pack_framework_aidl: true,
+ }
+diff --git a/build/optional.json b/build/optional.json
+--- a/build/optional.json
++++ b/build/optional.json
+@@ -23,11 +23,6 @@
+     "name": "android.test.runner",
+     "jar": "android.test.runner.jar",
+     "manifest": false
+-  },
+-  {
+-    "name": "wear-sdk",
+-    "jar": "wear-sdk.jar",
+-    "manifest": false
+   }
+ ]
+ 

@@ -1,0 +1,264 @@
+{
+  "appsearch_classes": 24,
+  "changes_from_original_sources": [
+    [
+      "android.app.appsearch.AppSearchBlobHandle",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.AppSearchSchema",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.CommitBlobResponse",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.EmbeddingVector",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.GetByDocumentIdRequest",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.GetSchemaResponse",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.JoinSpec",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.OpenBlobForReadResponse",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.OpenBlobForWriteResponse",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.RemoveBlobResponse",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.RemoveByDocumentIdRequest",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.ReportUsageRequest",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SchemaVisibilityConfig",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchResult",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchResult.EmbeddingMatchInfo",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchResult.MatchInfo",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchResult.MatchRange",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchResult.TextMatchInfo",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchSpec",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchSuggestionResult",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SearchSuggestionSpec",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.SetSchemaResponse",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.StorageInfo",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "android.app.appsearch.observer.ObserverSpec",
+      "AppSearch inherited final modifier"
+    ],
+    [
+      "dalvik.annotation.TestTarget",
+      "ART source-generated modifier"
+    ],
+    [
+      "dalvik.annotation.TestTarget",
+      "ART source-generated modifier"
+    ],
+    [
+      "dalvik.annotation.TestTarget",
+      "ART source-generated modifier"
+    ],
+    [
+      "dalvik.annotation.TestTargetClass",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.io.ObjectInput",
+      "ART source-generated class header"
+    ],
+    [
+      "java.io.ObjectOutput",
+      "ART source-generated class header"
+    ],
+    [
+      "java.lang.Deprecated",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.lang.Deprecated",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.lang.SuppressWarnings",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.lang.annotation.Repeatable",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.lang.annotation.Retention",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.lang.annotation.Target",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.security.PrivateKey",
+      "ART source-generated class header"
+    ],
+    [
+      "java.security.interfaces.ECPrivateKey",
+      "ART source-generated class header"
+    ],
+    [
+      "java.security.interfaces.ECPublicKey",
+      "ART source-generated class header"
+    ],
+    [
+      "java.security.interfaces.XECPrivateKey",
+      "ART source-generated class header"
+    ],
+    [
+      "java.security.interfaces.XECPublicKey",
+      "ART source-generated class header"
+    ],
+    [
+      "java.sql.Connection",
+      "ART source-generated class header"
+    ],
+    [
+      "java.sql.ResultSet",
+      "ART source-generated class header"
+    ],
+    [
+      "java.sql.Statement",
+      "ART source-generated class header"
+    ],
+    [
+      "java.time.chrono.ChronoLocalDate",
+      "ART source-generated class header"
+    ],
+    [
+      "java.time.chrono.ChronoLocalDateTime",
+      "ART source-generated class header"
+    ],
+    [
+      "java.time.chrono.ChronoZonedDateTime",
+      "ART source-generated class header"
+    ],
+    [
+      "java.util.List",
+      "ART source-generated class header"
+    ],
+    [
+      "java.util.SortedMap",
+      "ART source-generated class header"
+    ],
+    [
+      "java.util.SortedSet",
+      "ART source-generated class header"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ConcurrentHashMap.KeySetView",
+      "ART source-generated modifier"
+    ],
+    [
+      "java.util.concurrent.ExecutorService",
+      "ART source-generated class header"
+    ],
+    [
+      "java.util.concurrent.Flow.Processor",
+      "ART source-generated class header"
+    ],
+    [
+      "java.util.concurrent.RunnableFuture",
+      "ART source-generated class header"
+    ],
+    [
+      "javax.annotation.processing.Generated",
+      "ART source-generated modifier"
+    ],
+    [
+      "javax.annotation.processing.Generated",
+      "ART source-generated modifier"
+    ],
+    [
+      "javax.annotation.processing.Generated",
+      "ART source-generated modifier"
+    ],
+    [
+      "javax.crypto.SecretKey",
+      "ART source-generated class header"
+    ]
+  ],
+  "art_sha256": "5059f34dbbdaee45a4bd4f8b14ab4e4beed6231ed14fb4efca92b39dc1f02081",
+  "result_sha256": "120e49c34fb809f007d433d20c13de9a374c969d5a87792f2336931956581933",
+  "byte_identical_to_fixed_reference": true
+}

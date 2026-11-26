@@ -1,0 +1,38 @@
+{
+  "flags_sha256": "82c311c807f02ee38dac27a4be1f8cd26ba2a22b4f69b2032782b4149cad8d6c",
+  "manifest_flags": 121,
+  "overrides": {
+    "android.media.audio.concurrent_audio_record_bypass_permission": {
+      "permission": "READ_ONLY",
+      "scope_sha256": "27795e87fa13afd5fd1f24b4d96edc28467c75f9197abd055389aa586e85b262",
+      "state": "ENABLED",
+      "value_path": "aconfig/bp4a/android.media.audio/concurrent_audio_record_bypass_permission_flag_values.textproto",
+      "value_sha256": "e313140073acbe0a25c494dc32e3717bdde8b67943c5f990fc09e45a8d58affc"
+    },
+    "android.media.audio.manage_assistant_audio_permission": {
+      "permission": "READ_ONLY",
+      "scope_sha256": "03108cc2bd56b112bb9d8f0a76dfa420034994b049f9af16dbc8bfcad99b9462",
+      "state": "ENABLED",
+      "value_path": "aconfig/cp2a/android.media.audio/manage_assistant_audio_permission_flag_values.textproto",
+      "value_sha256": "8cb460099c7b3c5d4d29c0c698f7fb2ef41d50289326030b3ad2f06ca94dac31"
+    }
+  },
+  "release_config": "sdk-cp2a",
+  "release_config_sha256": "468f94fa5395c189737582f907372d7ea86fa206fc41baff0dacd3639e0e4e58",
+  "resource_flags": 2,
+  "selected_value_sets": [
+    "aconfig_value_set-platform_build_release-ap3a",
+    "aconfig_value_set-platform_build_release-ap4a",
+    "aconfig_value_set-platform_build_release-bp1a",
+    "aconfig_value_set-platform_build_release-bp2a",
+    "aconfig_value_set-platform_build_release-bp3a",
+    "aconfig_value_set-platform_build_release-userdebug",
+    "aconfig_value_set-platform_build_release-bp4a",
+    "aconfig_value_set-platform_build_release-mainline_2026_01",
+    "aconfig_value_set-platform_build_release-mainline_2026_02",
+    "aconfig_value_set-platform_build_release-cp1a",
+    "aconfig_value_set-platform_build_release-mainline_2026_03",
+    "aconfig_value_set-platform_build_release-mainline_2026_04",
+    "aconfig_value_set-platform_build_release-cp2a"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "api_versions_sha256": "233d5e8ed503d95576f750c0bcad413b9d11825bb3b7d5bca8caafcd54ec3abe",
+  "core_module_input_manifest_sha256": "1b536890f1f7b36d454f57db1b719860dca712c9ea4e8d65d0703723f9ce9af7",
+  "known_levels": {
+    "android/adservices/adid/AdId": "34",
+    "android/app/Activity": "1",
+    "android/app/appsearch/AppSearchManager": "31",
+    "android/icu/util/ULocale": "24",
+    "android/nfc/NfcAdapter": "9"
+  },
+  "legacy_exact_matches": {
+    "class": 3015,
+    "extends": 2329,
+    "field": 9917,
+    "implements": 1202,
+    "method": 21050
+  },
+  "legacy_snapshot_sha256": {
+    "1": "44c50010cee1eedf459594d795b0be352b375718d6312f7392a73b0adf3e65c6",
+    "10": "65c8a0def36daec4c6f61e725ee82030e461b0933fc86e7a2eb05d670d6efad9",
+    "11": "ca523c2edb07cc3491e34a89d7502ca039be94b1a041aeb85ed6d9d6e0a82874",
+    "12": "6dfc5d56d5e8c78d35faad38411c168a1dc0e107472f811e5e641b760d0b9605",
+    "13": "969506329279b7326d0416d28ffdf6233662a6e87f840128e56cbcb97a04dfe7",
+    "2": "4bd6e84b0739e112591c3c67ab60e85cf9502391bab016d1cb62ecf9e0b1008b",
+    "3": "85f89cd53d0e89b2b2a6ae53e62701eb6bd8da139f23db42adaa830ccb29da5f",
+    "4": "73feb695dc4358ee07ba75b8760a1f693c8ffdbbafd621a4d006f3f52d31c158",
+    "5": "ac3351da1fbc8764e00608cab34895878eca5d773c47fbba4cebdc84f2795f10",
+    "6": "c143fd048fbb9c326e8f0a4e73bcf5c351e6e8d80360e9d0d5d589a51741e625",
+    "7": "56a2ea0bcf0243e7e55f9c92fdf791a9c52ee5df2a68f8c5d34fa3208bf2381f",
+    "8": "d9345d7dd30f297714c093debfe034fa64ca27ad86e7f5ef3971fc2ec8848492",
+    "9": "3055615005cd944e9d59e68812b7eb43c8499f204a76f140fe5f6672f9cdf507"
+  },
+  "limits": "Partial platform module coverage, unresolved old JDiff generics and API 36.1, early-only symbols not integrated.",
+  "modern_metalava_output_sha256": "ce2cea60f46856248b3a36422ff30f43c85b69b4bd7108aeb0e25984fb74131b",
+  "module_input_manifest_sha256": "008a26031c285d7b57bc58344cc47b84637f0136298c410d323d6df5977fd7a7",
+  "state": "diagnostic"
+}

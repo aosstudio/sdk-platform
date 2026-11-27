@@ -24,7 +24,7 @@ def run(*command: Path | str, expected: int = 0) -> str:
     return result.stdout
 
 
-def verify_layout(platform: Path, system: Path, version: str) -> None:
+def verify_layout(platform: Path, system: Path, version: str, revision: int) -> None:
     for name, count in (
         ("android.jar", 6440),
         ("core-for-system-modules.jar", 1764),
@@ -58,6 +58,7 @@ def verify_layout(platform: Path, system: Path, version: str) -> None:
     assert (platform / "source-inputs.json").read_bytes() == LOCK_PATH.read_bytes()
     properties = (platform / "source.properties").read_text().splitlines()
     assert f"AndroidVersion.ApiLevel={version}" in properties
+    assert f"Pkg.Revision={revision}" in properties
     assert "AndroidVersion.IsBaseSdk=true" in properties
     assert "wear-sdk" not in (platform / "optional/optional.json").read_text()
     assert not (platform / "optional/wear-sdk.jar").exists()
@@ -139,6 +140,8 @@ def main() -> None:
         for key in ("JDK_JAVA_OPTIONS", "_JAVA_OPTIONS", "CLASSPATH"):
             os.environ.pop(key, None)
         jdk = work / "jdk"
+        asm = "asm-9.9.jar"
+        fetch(asm, lock["files"][asm])
         for name, spec in lock["files"].items():
             if name.startswith("aosstudio-jdk-"):
                 fetch(name, spec)
@@ -151,7 +154,16 @@ def main() -> None:
         system = dist / f"aosstudio-system-stubs-{version}.jar"
         run("unzip", "-q", dist / f"aosstudio-sdk-platform-{version}.zip", "-d", work)
         platform = work / f"android-{version}"
-        verify_layout(platform, system, version)
+        verify_layout(platform, system, version, lock["revision"])
+        run(
+            jdk / "bin/java",
+            "--class-path",
+            CACHE / asm,
+            TESTS / "DeclaredMethods.java",
+            ROOT / "api" / version / "public-declared-methods.tsv",
+            platform / "android.jar",
+            system,
+        )
         verify_compilation(platform, system, jdk, work / "build-tools", work)
     print(f"SDK Platform {version} and System stubs verified")
 

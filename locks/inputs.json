@@ -1,5 +1,6 @@
 {
   "version": "37.0",
+  "revision": 2,
   "android_version": "17",
   "extension_level": "22",
   "manifest": {
@@ -21,6 +22,7 @@
     "api/37.0/metadata/framework.aidl": "216a0eeffbfd59bd293abb476b85f28a19dbb74b3a87fbf6706f1e36ad814410",
     "api/37.0/metadata/service_actions.txt": "061670a1543cb9ee1fe07f0cf03add2a119fbfbab098931a90742ac2fb0ad4ec",
     "api/37.0/metadata/widgets.txt": "635b07d0d1897ba2ce31a51e3932f3962639e93ee5acd2f08ad040a5a1e1f9d5",
+    "api/37.0/public-declared-methods.tsv": "dc50d9a42c11d85dfd198cc64612eb2aad9dcd75da6467873b6e6151a0ae21f0",
     "api/37.0/public-provenance.json": "f3ed90e286d8fbf347eb46f1dc1205a825a6d5db840ae5b24810c6d1ba400c95",
     "api/37.0/public.txt": "120e49c34fb809f007d433d20c13de9a374c969d5a87792f2336931956581933",
     "api/37.0/system-provenance.json": "c5d102929a13c7ece881c1b7540c7cc842187d12d45b00ddfdb9547dbbac4e3e",

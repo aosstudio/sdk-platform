@@ -26,6 +26,7 @@ class Input(TypedDict):
 
 class Lock(TypedDict):
     version: str
+    revision: int
     android_version: str
     extension_level: str
     snapshots: dict[str, str]

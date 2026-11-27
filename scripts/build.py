@@ -3,6 +3,7 @@
 from collections.abc import Iterable, Sequence
 import os
 from pathlib import Path
+import re
 from shutil import copyfile, copytree, rmtree
 import subprocess
 import tarfile
@@ -154,6 +155,36 @@ def compile_signature(
     javac(name, source.rglob("*.java"), classes, classpath)
     jar(output, classes)
     return source
+
+
+def public_signatures(api: Path) -> tuple[Path, Path]:
+    public = api / "public.txt"
+    methods: dict[str, list[str]] = {}
+    for entry in (api / "public-declared-methods.tsv").read_text().splitlines():
+        owner, _, _, declaration = entry.split("\t", 3)
+        methods.setdefault(owner, []).append(f"    method {declaration};")
+
+    class_header = re.compile(r"^  .*\b(?:class|interface|enum) ([\w.$]+)(?=[ <{]).*{$")
+    packages: dict[str, list[str]] = {}
+    package = ""
+    for line in public.read_text().splitlines():
+        if line.startswith("package "):
+            package = line.removeprefix("package ").removesuffix(" {")
+        elif match := class_header.fullmatch(line):
+            owner = f"{package.replace('.', '/')}/{match[1].replace('.', '$')}"
+            if owner in methods:
+                packages.setdefault(package, []).extend(
+                    [line, *methods.pop(owner), "  }", ""]
+                )
+    if methods:
+        raise ValueError(f"No public API class for {', '.join(sorted(methods))}")
+
+    supplement = WORK / "public-declared-methods.txt"
+    text = ["// Signature format: 2.0", ""]
+    for package, declarations in packages.items():
+        text.extend([f"package {package} {{", "", *declarations, "}", ""])
+    supplement.write_text("\n".join(text), encoding="utf-8")
+    return public, supplement
 
 
 def build_framework(lock: Lock) -> Path:
@@ -353,6 +384,9 @@ def platform_data(lock: Lock, platform: Path, api: Path) -> None:
         "BETA_SDK_VERSION": "",
     }.items():
         properties = properties.replace("${" + key + "}", value)
+    properties = re.sub(
+        r"(?m)^Pkg\.Revision=\d+$", f"Pkg.Revision={lock['revision']}", properties
+    )
     (platform / "source.properties").write_text(properties)
     for folder in (
         platform,
@@ -387,9 +421,8 @@ def build(lock: Lock) -> None:
     )
     jar(ANNOTATIONS, annotation_classes)
     public = WORK / "public-classes.jar"
-    public_src = compile_signature(
-        "public", [api / "public.txt"], [ANNOTATIONS], public
-    )
+    signatures = public_signatures(api)
+    public_src = compile_signature("public", signatures, [ANNOTATIONS], public)
     jar(platform / "android-stubs-src.jar", public_src)
     resources = build_framework(lock)
     assemble_public_jar(public, resources, platform / "android.jar")
@@ -398,7 +431,7 @@ def build(lock: Lock) -> None:
 
     system = WORK / f"aosstudio-system-stubs-{version}.jar"
     compile_signature(
-        "system", [api / "public.txt", api / "system.txt"], [ANNOTATIONS], system
+        "system", [*signatures, api / "system.txt"], [ANNOTATIONS], system
     )
     notices = WORK / "system-notices/META-INF"
     notices.mkdir(parents=True)

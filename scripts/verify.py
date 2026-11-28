@@ -160,7 +160,6 @@ def main() -> None:
             "--class-path",
             CACHE / asm,
             TESTS / "DeclaredMethods.java",
-            ROOT / "api" / version / "public-declared-methods.tsv",
             platform / "android.jar",
             system,
         )

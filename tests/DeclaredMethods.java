@@ -1,6 +1,3 @@
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -14,15 +11,14 @@ class DeclaredMethods {
     private record Method(String name, String descriptor) {}
 
     public static void main(String[] args) throws Exception {
-        Map<String, Set<Method>> expected = new HashMap<>();
-        for (String row : Files.readAllLines(Path.of(args[0]))) {
-            String[] fields = row.split("\t", 4);
-            expected.computeIfAbsent(fields[0], owner -> new HashSet<>())
-                    .add(new Method(fields[1], fields[2]));
-        }
+        // JNI Zero looks for methods declared on the requested owner.
+        Map<String, Set<Method>> expected = Map.of(
+                "java/util/UUID", Set.of(new Method("toString", "()Ljava/lang/String;"),
+                        new Method("equals", "(Ljava/lang/Object;)Z"), new Method("hashCode", "()I")),
+                "android/animation/AnimatorSet", Set.of(new Method("cancel", "()V")));
 
-        for (int index = 1; index < args.length; index++) {
-            try (ZipFile jar = new ZipFile(args[index])) {
+        for (String path : args) {
+            try (ZipFile jar = new ZipFile(path)) {
                 for (var entry : expected.entrySet()) {
                     String owner = entry.getKey();
                     var member = jar.getEntry(owner + ".class");

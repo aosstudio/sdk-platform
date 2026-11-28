@@ -1,6 +1,6 @@
 {
   "version": "37.0",
-  "revision": 2,
+  "revision": 3,
   "android_version": "17",
   "extension_level": "22",
   "manifest": {
@@ -22,7 +22,6 @@
     "api/37.0/metadata/framework.aidl": "216a0eeffbfd59bd293abb476b85f28a19dbb74b3a87fbf6706f1e36ad814410",
     "api/37.0/metadata/service_actions.txt": "061670a1543cb9ee1fe07f0cf03add2a119fbfbab098931a90742ac2fb0ad4ec",
     "api/37.0/metadata/widgets.txt": "635b07d0d1897ba2ce31a51e3932f3962639e93ee5acd2f08ad040a5a1e1f9d5",
-    "api/37.0/public-declared-methods.tsv": "dc50d9a42c11d85dfd198cc64612eb2aad9dcd75da6467873b6e6151a0ae21f0",
     "api/37.0/public-provenance.json": "f3ed90e286d8fbf347eb46f1dc1205a825a6d5db840ae5b24810c6d1ba400c95",
     "api/37.0/public.txt": "120e49c34fb809f007d433d20c13de9a374c969d5a87792f2336931956581933",
     "api/37.0/system-provenance.json": "c5d102929a13c7ece881c1b7540c7cc842187d12d45b00ddfdb9547dbbac4e3e",
@@ -33,6 +32,13 @@
     "patches/aosp-17-platform-without-wear.patch": "1b1c5a1bcadeeaa98afe27f032147b3c4bcee8ae3358b24e18d19171034a73ad"
   },
   "files": {
+    "aosp-public-stub-sources.jar": {
+      "url": "https://android.googlesource.com/platform/prebuilts/fullsdk/platforms/+/39cfe045632329306ca749cdc0ad1d4670d3303c/android-37.0/android-stubs-src.jar?format=TEXT",
+      "sha256": "c9e125f1a4e200f367f910711504ec01d62a0b13b8ba376fdaaac3e06872a600",
+      "license": "Apache-2.0, GPL-2.0-only WITH Classpath-exception-2.0, Unicode-3.0, and public domain (used Java declarations)",
+      "format": "gitiles-text",
+      "role": "java-stub-sources"
+    },
     "android-test-base-api.tar.gz": {
       "url": "https://android.googlesource.com/platform/frameworks/base/+archive/94b4c163b7dfe5ce3607f7bb8456f9573f7de57d/test-base/api.tar.gz",
       "sha256": "b6acaf6c303bc204a49e46b432dd3fcfe00b63e951337f91e3bfcac9aceb06fe",
@@ -144,6 +150,20 @@
       "license": "Apache-2.0",
       "format": "gitiles-tree",
       "role": "source"
+    },
+    "icu-LICENSE": {
+      "url": "https://android.googlesource.com/platform/external/icu/+/00c713278f65a4db343c388f0c4f8501f70387b9/LICENSE?format=TEXT",
+      "sha256": "ea75d2e79a97f8dfc1e1ca04beedc432a47af4993e0cd659cef062050a57d3f9",
+      "license": "Unicode-3.0 and upstream third-party notices",
+      "format": "gitiles-text",
+      "role": "metadata"
+    },
+    "libcore-LICENSE": {
+      "url": "https://android.googlesource.com/platform/libcore/+/4ebfb391ee0109d16abe6e2bc965724b940928c5/LICENSE?format=TEXT",
+      "sha256": "067d8f7f645efe1131a9df13aa80ec2910d4ff898f9b14d337443a4202d56ab6",
+      "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+      "format": "gitiles-text",
+      "role": "metadata"
     },
     "libcore-lambda-rules.txt": {
       "url": "https://android.googlesource.com/platform/libcore/+/4ebfb391ee0109d16abe6e2bc965724b940928c5/core-lambda-jarjar-rules.txt?format=TEXT",

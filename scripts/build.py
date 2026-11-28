@@ -27,6 +27,7 @@ COMMANDS = {
     "soong_zip": "bootstrap",
 }
 ANNOTATIONS = WORK / "stub-annotations.jar"
+STUB_LICENSES = ("icu-LICENSE", "libcore-LICENSE")
 SDK_ANNOTATIONS = (
     "android/annotation/FlaggedApi.class",
     "android/annotation/NonNull.class",
@@ -159,8 +160,30 @@ def compile_signature(
 
 def public_signatures(api: Path) -> tuple[Path, Path]:
     public = api / "public.txt"
+    baseline = WORK / "signature-classes.jar"
+    baseline_sources = compile_signature("signature", [public], [ANNOTATIONS], baseline)
+    upstream = WORK / "upstream-public-stubs"
+    with ZipFile(CACHE / "aosp-public-stub-sources.jar") as archive:
+        for stub in sorted(baseline_sources.rglob("*.java")):
+            name = stub.relative_to(baseline_sources)
+            destination = upstream / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(archive.read(name.as_posix()))
+
+    declared_overrides = WORK / "declared-overrides.tsv"
+    run(
+        JDK / "bin/java",
+        "-Xmx3g",
+        "--class-path",
+        CACHE / "asm-9.9.jar",
+        ROOT / "scripts/DeclaredOverrides.java",
+        baseline,
+        upstream,
+        ANNOTATIONS,
+        declared_overrides,
+    )
     methods: dict[str, list[str]] = {}
-    for entry in (api / "public-declared-methods.tsv").read_text().splitlines():
+    for entry in declared_overrides.read_text(encoding="utf-8").splitlines():
         owner, _, _, declaration = entry.split("\t", 3)
         methods.setdefault(owner, []).append(f"    method {declaration};")
 
@@ -401,6 +424,8 @@ def platform_data(lock: Lock, platform: Path, api: Path) -> None:
     copyfile(ROOT / "LICENSE", licenses / "AOSStudio-LICENSE")
     copyfile(SOURCES / "framework-res/NOTICE", licenses / "framework-res-NOTICE")
     copyfile(CACHE / "apache-http-NOTICE", licenses / "apache-http-NOTICE")
+    for name in STUB_LICENSES:
+        copyfile(CACHE / name, licenses / name)
     copyfile(JDK / "legal/java.base/LICENSE", licenses / "libcore-lambda-LICENSE")
     copyfile(LOCK_PATH, platform / "source-inputs.json")
 
@@ -436,6 +461,9 @@ def build(lock: Lock) -> None:
     notices = WORK / "system-notices/META-INF"
     notices.mkdir(parents=True)
     copyfile(ROOT / "LICENSE", notices / "LICENSE")
+    for name in STUB_LICENSES:
+        copyfile(CACHE / name, notices / name)
+    copyfile(SOURCES / "development-sdk/sdk_files_NOTICE.txt", notices / "NOTICE")
     copyfile(LOCK_PATH, notices / "source-inputs.json")
     run(
         JDK / "bin/jar",
